@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agenda Multicapas</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Agenda Multicapas</h1>
+      <p class="muted">Listar · Agregar</p>
+    </header>
+
+    <section class="card card--pink">
+      <h2>Agregar contacto</h2>
+
+      <form id="contactForm" autocomplete="off">
+        <div class="grid">
+          <label>
+            Nombre
+            <input id="nombre" name="nombre" type="text" placeholder="Ej: Georgina" required />
+          </label>
+
+          <label>
+            Apellido
+            <input id="apellido" name="apellido" type="text" placeholder="Ej: Rivas" required />
+          </label>
+
+          <label>
+            Teléfono
+            <input id="telefono" name="telefono" type="tel" placeholder="Ej: 8299646486" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="btnGuardar">Guardar</button>
+          <button type="button" id="btnRecargar" class="secondary">Recargar</button>
+        </div>
+
+        <p id="status" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card card--blue">
+      <div class="tableHeader">
+        <h2>Contactos</h2>
+        <span class="pill" id="countPill">0</span>
+      </div>
+
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Teléfono</th>
+            </tr>
+          </thead>
+          <tbody id="contactsTbody">
+            <!-- rows here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/controller.js"></script>
+</body>
+</html>
